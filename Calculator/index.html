@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>calculator</title>
+    
+    <style>
+        /*Stylesheet using internal CSS*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            margin-top: 20px;
+            width: 400px;
+            height: 450px;
+            background-color: rgb(43, 39, 39);
+        }
+
+        h1 {
+            /* text-align: center; */
+            padding: 20px 20px 0px 20px;
+            color: #000000;
+            font-size: 40px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        input {
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            margin: 0.8rem;
+            background-color: silver;
+        }
+
+        .txt {
+            width: 83%;
+            background-color: silver;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Simple Calculator</h1>
+
+        <!--Main body of the calculator-->
+        <div class="main">
+            <form action="" name="cal">
+                <input type="text" name="disp" placeholder="0" class="txt"><br>
+                <input type="button" value="1" onclick="cal.disp.value+=1">
+                <input type="button" value="2" onclick="cal.disp.value+=2">
+                <input type="button" value="3" onclick="cal.disp.value+=3">
+                <input type="button" value="+" onclick="add()"><br>
+
+                <input type="button" value="4" onclick="cal.disp.value+=4">
+                <input type="button" value="5" onclick="cal.disp.value+=5">
+                <input type="button" value="6" onclick="cal.disp.value+=6">
+                <input type="button" value="-" onclick="sub()"><br>
+
+                <input type="button" value="7" onclick="cal.disp.value+=7">
+                <input type="button" value="8" onclick="cal.disp.value+=8">
+                <input type="button" value="9" onclick="cal.disp.value+=9">
+                <input type="button" value="x" onclick="mult()"><br>
+
+                <input type="button" value="C" onclick="cal.disp.value=''">
+                <input type="button" value="0" onclick="cal.disp.value+=0">
+                <input type="button" value="=" onclick="cal.disp.value=eval(cal.disp.value)">
+                <input type="button" value="/" onclick="div()">
+
+            </form>
+        </div>
+    </center>
+
+
+
+    <!--javaScript-->
+    <script>
+        /*addition function*/
+        function add() {
+            var a = 0, b = 0;
+            a = cal.disp.value;
+            b = a.charAt(a.length - 1);
+
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                cal.disp.value = a.substring(0, a.length - 1);
+                cal.disp.value += '+';
+            }
+            else {
+                cal.disp.value += '+';
+            }
+        }
+
+        /*Substraction function*/
+        function sub() {
+            var a = 0, b = 0;
+            a = cal.disp.value;
+            b = a.charAt(a.length - 1);
+
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                cal.disp.value = a.substring(0, a.length - 1);
+                cal.disp.value += '-';
+            }
+            else {
+                cal.disp.value += '-';
+            }
+        }
+
+        /*multiplication function*/
+        function mult() {
+            var a = 0, b = 0;
+            a = cal.disp.value;
+            b = a.charAt(a.length - 1);
+
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                cal.disp.value = a.substring(0, a.length - 1);
+                cal.disp.value += '*';
+            }
+            else {
+                cal.disp.value += '*';
+            }
+        }
+
+        /*division function*/
+        function div() {
+            var a = 0, b = 0;
+            a = cal.disp.value;
+            b = a.charAt(a.length - 1);
+
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                cal.disp.value = a.substring(0, a.length - 1);
+                cal.disp.value += '/';
+            }
+            else {
+                cal.disp.value += '/';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
