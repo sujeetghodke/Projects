@@ -13,7 +13,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
-    imag.classList.remove("img");
+    imag.classList.remove("img"); 
     info_box.classList.add("activeInfo"); //show info box
 }
 
