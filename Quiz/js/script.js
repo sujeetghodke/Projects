@@ -1,5 +1,6 @@
 //selecting all required elements
 const start_btn = document.querySelector(".start_btn button");
+const imag = document.querySelector(".img");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = info_box.querySelector(".buttons .restart");
@@ -12,11 +13,13 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
+    imag.classList.remove("img");
     info_box.classList.add("activeInfo"); //show info box
 }
 
 // if exitQuiz button clicked
 exit_btn.onclick = ()=>{
+    imag.classList.add("img");
     info_box.classList.remove("activeInfo"); //hide info box
 }
 
